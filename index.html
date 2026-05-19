@@ -1,0 +1,405 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Praticamente Tudo - Distribuidor de Eletrônicos</title>
+    <meta name="description" content="Distribuidor de produtos eletrônicos e acessórios. Atacado e Varejo.">
+    <!-- Google Fonts: Inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- FontAwesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        yellow: {
+                            brand: '#FFD700',
+                            hover: '#E5C100'
+                        },
+                        whatsapp: {
+                            DEFAULT: '#25D366',
+                            hover: '#1EBE5D'
+                        },
+                        gray: {
+                            light: '#F5F5F5'
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body {
+            background-color: #F5F5F5;
+            -webkit-font-smoothing: antialiased;
+        }
+        /* Hide scrollbar for category section */
+        .no-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+        .no-scrollbar {
+            -ms-overflow-style: none;  /* IE and Edge */
+            scrollbar-width: none;  /* Firefox */
+        }
+        .product-card {
+            transition: all 0.2s ease-in-out;
+        }
+        .product-card:hover {
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+            transform: translateY(-2px);
+        }
+    </style>
+</head>
+<body class="text-gray-900 font-sans">
+
+    <!-- Header / Topo -->
+    <header class="sticky top-0 z-50 shadow-sm">
+        <!-- Top Banner -->
+        <div class="bg-yellow-brand text-black py-1.5 px-4 text-center text-xs md:text-sm font-semibold tracking-wide uppercase">
+            <i class="fa-solid fa-bolt mr-2"></i> Distribuidor de Eletrônicos e Acessórios
+        </div>
+        <!-- Main Navbar -->
+        <div class="bg-white px-4 py-4 border-b border-gray-200">
+            <div class="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between gap-4">
+                <!-- Logo -->
+                <div class="flex items-center gap-2 w-full md:w-auto justify-center md:justify-start">
+                    <div class="w-10 h-10 bg-yellow-brand rounded-lg flex items-center justify-center">
+                        <i class="fa-solid fa-microchip text-2xl text-black"></i>
+                    </div>
+                    <div class="flex flex-col">
+                        <h1 class="text-2xl font-extrabold tracking-tight leading-none">Praticamente Tudo</h1>
+                        <span class="text-[10px] text-gray-500 font-medium uppercase tracking-wider">Atacado & Varejo</span>
+                    </div>
+                </div>
+                
+                <!-- Search Bar -->
+                <div class="w-full md:max-w-md relative">
+                    <input type="text" placeholder="Buscar produtos, marcas..." class="w-full bg-gray-100 border border-gray-200 rounded-lg py-2.5 pl-4 pr-10 focus:outline-none focus:border-yellow-brand focus:ring-1 focus:ring-yellow-brand transition-colors text-sm">
+                    <button class="absolute right-3 top-1/2 -translate-y-1/2 text-gray-400 hover:text-black">
+                        <i class="fa-solid fa-magnifying-glass"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="bg-white border-b border-gray-200">
+        <div class="max-w-7xl mx-auto px-4 py-8 md:py-12 flex flex-col items-center text-center">
+            <span class="bg-yellow-brand/20 text-yellow-hover px-3 py-1 rounded-full text-xs font-bold uppercase tracking-wider mb-4 border border-yellow-brand/30">Estoque Completo</span>
+            <h2 class="text-3xl md:text-5xl font-extrabold mb-4 text-black">Variedade e Preço de <br/><span class="text-yellow-hover">Distribuidor</span></h2>
+            <p class="text-gray-600 mb-8 max-w-2xl text-sm md:text-base font-medium">Equipe sua loja ou adquira no varejo com as melhores margens e garantia de qualidade. Estoque à pronta entrega.</p>
+            <a href="https://wa.me/5562996926096?text=Olá,%20gostaria%20de%20falar%20com%20um%20vendedor" target="_blank" rel="noopener noreferrer" class="bg-black text-white hover:bg-gray-800 transition-colors px-8 py-3.5 rounded-lg font-bold flex items-center gap-2 shadow-lg hover:shadow-xl">
+                Falar com Vendedor <i class="fa-brands fa-whatsapp text-yellow-brand text-lg"></i>
+            </a>
+        </div>
+    </section>
+
+    <!-- Sessão de Categorias -->
+    <section class="bg-white py-6 border-b border-gray-200">
+        <div class="max-w-7xl mx-auto px-4">
+            <h3 class="text-sm font-bold text-gray-400 uppercase tracking-wider mb-4">Navegue por Categoria</h3>
+            <div class="flex overflow-x-auto gap-4 pb-2 no-scrollbar">
+                <!-- Categoria 1 -->
+                <a href="#" class="flex flex-col items-center gap-2 min-w-[80px] group">
+                    <div class="w-16 h-16 rounded-full bg-gray-50 border border-gray-200 flex items-center justify-center group-hover:border-yellow-brand group-hover:bg-yellow-brand/10 transition-colors">
+                        <i class="fa-solid fa-mobile-screen-button text-2xl text-gray-700 group-hover:text-black"></i>
+                    </div>
+                    <span class="text-xs font-semibold text-center text-gray-700 group-hover:text-black">Capinhas</span>
+                </a>
+                <!-- Categoria 2 -->
+                <a href="#" class="flex flex-col items-center gap-2 min-w-[80px] group">
+                    <div class="w-16 h-16 rounded-full bg-gray-50 border border-gray-200 flex items-center justify-center group-hover:border-yellow-brand group-hover:bg-yellow-brand/10 transition-colors">
+                        <i class="fa-solid fa-headphones text-2xl text-gray-700 group-hover:text-black"></i>
+                    </div>
+                    <span class="text-xs font-semibold text-center text-gray-700 group-hover:text-black">Fones</span>
+                </a>
+                <!-- Categoria 3 -->
+                <a href="#" class="flex flex-col items-center gap-2 min-w-[80px] group">
+                    <div class="w-16 h-16 rounded-full bg-gray-50 border border-gray-200 flex items-center justify-center group-hover:border-yellow-brand group-hover:bg-yellow-brand/10 transition-colors">
+                        <i class="fa-solid fa-plug text-2xl text-gray-700 group-hover:text-black"></i>
+                    </div>
+                    <span class="text-xs font-semibold text-center text-gray-700 group-hover:text-black">Cabos</span>
+                </a>
+                <!-- Categoria 4 -->
+                <a href="#" class="flex flex-col items-center gap-2 min-w-[80px] group">
+                    <div class="w-16 h-16 rounded-full bg-gray-50 border border-gray-200 flex items-center justify-center group-hover:border-yellow-brand group-hover:bg-yellow-brand/10 transition-colors">
+                        <i class="fa-solid fa-shield-halved text-2xl text-gray-700 group-hover:text-black"></i>
+                    </div>
+                    <span class="text-xs font-semibold text-center text-gray-700 group-hover:text-black">Películas</span>
+                </a>
+                <!-- Categoria 5 -->
+                <a href="#" class="flex flex-col items-center gap-2 min-w-[80px] group">
+                    <div class="w-16 h-16 rounded-full bg-gray-50 border border-gray-200 flex items-center justify-center group-hover:border-yellow-brand group-hover:bg-yellow-brand/10 transition-colors">
+                        <i class="fa-solid fa-speaker-deck text-2xl text-gray-700 group-hover:text-black"></i>
+                    </div>
+                    <span class="text-xs font-semibold text-center text-gray-700 group-hover:text-black">Caixas de Som</span>
+                </a>
+                <!-- Categoria 6 -->
+                <a href="#" class="flex flex-col items-center gap-2 min-w-[80px] group">
+                    <div class="w-16 h-16 rounded-full bg-gray-50 border border-gray-200 flex items-center justify-center group-hover:border-yellow-brand group-hover:bg-yellow-brand/10 transition-colors">
+                        <i class="fa-solid fa-battery-full text-2xl text-gray-700 group-hover:text-black"></i>
+                    </div>
+                    <span class="text-xs font-semibold text-center text-gray-700 group-hover:text-black">Powerbanks</span>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sessão de Produtos -->
+    <main class="max-w-7xl mx-auto px-4 py-12">
+        <div class="flex items-center justify-between mb-8">
+            <h2 class="text-2xl font-extrabold text-black">Destaques da Semana</h2>
+            <a href="#" class="text-sm font-bold text-gray-500 hover:text-black hidden md:block">Ver todos os produtos <i class="fa-solid fa-arrow-right ml-1"></i></a>
+        </div>
+
+        <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 md:gap-6">
+            
+            <!-- Product 1 -->
+            <article class="product-card bg-white rounded-xl border border-gray-200 overflow-hidden flex flex-col">
+                <div class="relative pt-[100%] bg-white border-b border-gray-100">
+                    <img src="https://images.unsplash.com/photo-1601593346740-925612772716?w=400&q=80" alt="Capinha Anti-impacto iPhone" class="absolute inset-0 w-full h-full object-contain p-4 mix-blend-multiply">
+                    <span class="absolute top-2 left-2 bg-yellow-brand text-black text-[10px] font-bold px-2 py-0.5 rounded">Mais Vendido</span>
+                </div>
+                <div class="p-4 flex flex-col flex-1">
+                    <h3 class="text-sm font-bold text-gray-800 mb-1 leading-snug">Capinha Anti-impacto Transparente Premium</h3>
+                    <p class="text-xs text-gray-500 mb-3">Modelos iPhone 13/14/15</p>
+                    <div class="mt-auto">
+                        <div class="text-lg font-extrabold text-black mb-3">R$ 15,90 <span class="text-[10px] font-normal text-gray-500 uppercase">/ Atacado</span></div>
+                        <a href="https://wa.me/5562996926096?text=Olá,%20tenho%20interesse%20no%20produto:%20Capinha%20Anti-impacto%20Transparente%20Premium" target="_blank" rel="noopener noreferrer" class="w-full block text-center bg-yellow-brand hover:bg-yellow-hover text-black font-bold py-2.5 rounded-lg text-sm transition-colors">
+                            <i class="fa-brands fa-whatsapp mr-1"></i> Comprar
+                        </a>
+                    </div>
+                </div>
+            </article>
+
+            <!-- Product 2 -->
+            <article class="product-card bg-white rounded-xl border border-gray-200 overflow-hidden flex flex-col">
+                <div class="relative pt-[100%] bg-white border-b border-gray-100">
+                    <img src="https://images.unsplash.com/photo-1628286909871-3841684826b5?w=400&q=80" alt="Cabo USB-C Turbo" class="absolute inset-0 w-full h-full object-contain p-4 mix-blend-multiply">
+                </div>
+                <div class="p-4 flex flex-col flex-1">
+                    <h3 class="text-sm font-bold text-gray-800 mb-1 leading-snug">Cabo USB-C Turbo 100W Trançado 2m</h3>
+                    <p class="text-xs text-gray-500 mb-3">Carregamento Rápido</p>
+                    <div class="mt-auto">
+                        <div class="text-lg font-extrabold text-black mb-3">R$ 22,50 <span class="text-[10px] font-normal text-gray-500 uppercase">/ Atacado</span></div>
+                        <a href="https://wa.me/5562996926096?text=Olá,%20tenho%20interesse%20no%20produto:%20Cabo%20USB-C%20Turbo%20100W" target="_blank" rel="noopener noreferrer" class="w-full block text-center bg-yellow-brand hover:bg-yellow-hover text-black font-bold py-2.5 rounded-lg text-sm transition-colors">
+                            <i class="fa-brands fa-whatsapp mr-1"></i> Comprar
+                        </a>
+                    </div>
+                </div>
+            </article>
+
+            <!-- Product 3 -->
+            <article class="product-card bg-white rounded-xl border border-gray-200 overflow-hidden flex flex-col">
+                <div class="relative pt-[100%] bg-white border-b border-gray-100">
+                    <img src="https://images.unsplash.com/photo-1505740420928-5e560c06d30e?w=400&q=80" alt="Fone Bluetooth TWS" class="absolute inset-0 w-full h-full object-contain p-4 mix-blend-multiply">
+                    <span class="absolute top-2 left-2 bg-black text-white text-[10px] font-bold px-2 py-0.5 rounded">Novo</span>
+                </div>
+                <div class="p-4 flex flex-col flex-1">
+                    <h3 class="text-sm font-bold text-gray-800 mb-1 leading-snug">Fone de Ouvido Bluetooth 5.3 TWS Pro</h3>
+                    <p class="text-xs text-gray-500 mb-3">Alta fidelidade</p>
+                    <div class="mt-auto">
+                        <div class="text-lg font-extrabold text-black mb-3">R$ 49,90 <span class="text-[10px] font-normal text-gray-500 uppercase">/ Atacado</span></div>
+                        <a href="https://wa.me/5562996926096?text=Olá,%20tenho%20interesse%20no%20produto:%20Fone%20Bluetooth%20TWS%20Pro" target="_blank" rel="noopener noreferrer" class="w-full block text-center bg-yellow-brand hover:bg-yellow-hover text-black font-bold py-2.5 rounded-lg text-sm transition-colors">
+                            <i class="fa-brands fa-whatsapp mr-1"></i> Comprar
+                        </a>
+                    </div>
+                </div>
+            </article>
+
+            <!-- Product 4 -->
+            <article class="product-card bg-white rounded-xl border border-gray-200 overflow-hidden flex flex-col">
+                <div class="relative pt-[100%] bg-white border-b border-gray-100">
+                    <img src="https://images.unsplash.com/photo-1609091839311-d5365f9ff1c5?w=400&q=80" alt="Carregador Portátil 10000mAh" class="absolute inset-0 w-full h-full object-contain p-4 mix-blend-multiply">
+                </div>
+                <div class="p-4 flex flex-col flex-1">
+                    <h3 class="text-sm font-bold text-gray-800 mb-1 leading-snug">Powerbank 10.000mAh Ultra Fino Visor Digital</h3>
+                    <p class="text-xs text-gray-500 mb-3">Carga dupla</p>
+                    <div class="mt-auto">
+                        <div class="text-lg font-extrabold text-black mb-3">R$ 55,00 <span class="text-[10px] font-normal text-gray-500 uppercase">/ Atacado</span></div>
+                        <a href="https://wa.me/5562996926096?text=Olá,%20tenho%20interesse%20no%20produto:%20Powerbank%2010000mAh" target="_blank" rel="noopener noreferrer" class="w-full block text-center bg-yellow-brand hover:bg-yellow-hover text-black font-bold py-2.5 rounded-lg text-sm transition-colors">
+                            <i class="fa-brands fa-whatsapp mr-1"></i> Comprar
+                        </a>
+                    </div>
+                </div>
+            </article>
+
+            <!-- Product 5 -->
+            <article class="product-card bg-white rounded-xl border border-gray-200 overflow-hidden flex flex-col">
+                <div class="relative pt-[100%] bg-white border-b border-gray-100">
+                    <img src="https://images.unsplash.com/photo-1546868871-7041f2a55e12?w=400&q=80" alt="Relógio Smartwatch" class="absolute inset-0 w-full h-full object-contain p-4 mix-blend-multiply">
+                </div>
+                <div class="p-4 flex flex-col flex-1">
+                    <h3 class="text-sm font-bold text-gray-800 mb-1 leading-snug">Smartwatch Series 9 Tela AMOLED Borda Fina</h3>
+                    <p class="text-xs text-gray-500 mb-3">Notificações e Esporte</p>
+                    <div class="mt-auto">
+                        <div class="text-lg font-extrabold text-black mb-3">R$ 115,00 <span class="text-[10px] font-normal text-gray-500 uppercase">/ Atacado</span></div>
+                        <a href="https://wa.me/5562996926096?text=Olá,%20tenho%20interesse%20no%20produto:%20Smartwatch%20Series%209" target="_blank" rel="noopener noreferrer" class="w-full block text-center bg-yellow-brand hover:bg-yellow-hover text-black font-bold py-2.5 rounded-lg text-sm transition-colors">
+                            <i class="fa-brands fa-whatsapp mr-1"></i> Comprar
+                        </a>
+                    </div>
+                </div>
+            </article>
+
+            <!-- Product 6 -->
+            <article class="product-card bg-white rounded-xl border border-gray-200 overflow-hidden flex flex-col">
+                <div class="relative pt-[100%] bg-white border-b border-gray-100">
+                    <img src="https://images.unsplash.com/photo-1583394838336-acd977736f90?w=400&q=80" alt="Fone Headphone Bluetooth" class="absolute inset-0 w-full h-full object-contain p-4 mix-blend-multiply">
+                </div>
+                <div class="p-4 flex flex-col flex-1">
+                    <h3 class="text-sm font-bold text-gray-800 mb-1 leading-snug">Headphone Bluetooth Over-Ear Bass Extra</h3>
+                    <p class="text-xs text-gray-500 mb-3">Isolamento acústico</p>
+                    <div class="mt-auto">
+                        <div class="text-lg font-extrabold text-black mb-3">R$ 68,00 <span class="text-[10px] font-normal text-gray-500 uppercase">/ Atacado</span></div>
+                        <a href="https://wa.me/5562996926096?text=Olá,%20tenho%20interesse%20no%20produto:%20Headphone%20Bluetooth" target="_blank" rel="noopener noreferrer" class="w-full block text-center bg-yellow-brand hover:bg-yellow-hover text-black font-bold py-2.5 rounded-lg text-sm transition-colors">
+                            <i class="fa-brands fa-whatsapp mr-1"></i> Comprar
+                        </a>
+                    </div>
+                </div>
+            </article>
+
+            <!-- Product 7 -->
+            <article class="product-card bg-white rounded-xl border border-gray-200 overflow-hidden flex flex-col">
+                <div class="relative pt-[100%] bg-white border-b border-gray-100">
+                    <img src="https://images.unsplash.com/photo-1585338107529-13afc5f02586?w=400&q=80" alt="Carregador de Parede Turbo" class="absolute inset-0 w-full h-full object-contain p-4 mix-blend-multiply">
+                </div>
+                <div class="p-4 flex flex-col flex-1">
+                    <h3 class="text-sm font-bold text-gray-800 mb-1 leading-snug">Fonte de Parede USB-C Turbo 30W PD</h3>
+                    <p class="text-xs text-gray-500 mb-3">Proteção inteligente</p>
+                    <div class="mt-auto">
+                        <div class="text-lg font-extrabold text-black mb-3">R$ 28,90 <span class="text-[10px] font-normal text-gray-500 uppercase">/ Atacado</span></div>
+                        <a href="https://wa.me/5562996926096?text=Olá,%20tenho%20interesse%20no%20produto:%20Fonte%20Parede%2030W" target="_blank" rel="noopener noreferrer" class="w-full block text-center bg-yellow-brand hover:bg-yellow-hover text-black font-bold py-2.5 rounded-lg text-sm transition-colors">
+                            <i class="fa-brands fa-whatsapp mr-1"></i> Comprar
+                        </a>
+                    </div>
+                </div>
+            </article>
+
+            <!-- Product 8 -->
+            <article class="product-card bg-white rounded-xl border border-gray-200 overflow-hidden flex flex-col">
+                <div class="relative pt-[100%] bg-white border-b border-gray-100">
+                    <img src="https://images.unsplash.com/photo-1600080486036-7cb4fc88fbdf?w=400&q=80" alt="Suporte Veicular" class="absolute inset-0 w-full h-full object-contain p-4 mix-blend-multiply">
+                </div>
+                <div class="p-4 flex flex-col flex-1">
+                    <h3 class="text-sm font-bold text-gray-800 mb-1 leading-snug">Suporte Veicular Magnético 360º Painel</h3>
+                    <p class="text-xs text-gray-500 mb-3">Fixação ultra forte</p>
+                    <div class="mt-auto">
+                        <div class="text-lg font-extrabold text-black mb-3">R$ 14,50 <span class="text-[10px] font-normal text-gray-500 uppercase">/ Atacado</span></div>
+                        <a href="https://wa.me/5562996926096?text=Olá,%20tenho%20interesse%20no%20produto:%20Suporte%20Veicular%20Magnético" target="_blank" rel="noopener noreferrer" class="w-full block text-center bg-yellow-brand hover:bg-yellow-hover text-black font-bold py-2.5 rounded-lg text-sm transition-colors">
+                            <i class="fa-brands fa-whatsapp mr-1"></i> Comprar
+                        </a>
+                    </div>
+                </div>
+            </article>
+
+        </div>
+    </main>
+
+    <!-- Sessão de Credibilidade (Localização) -->
+    <section class="bg-gray-900 text-white py-16">
+        <div class="max-w-7xl mx-auto px-4 flex flex-col md:flex-row items-center gap-10">
+            <div class="md:w-1/2">
+                <h2 class="text-3xl md:text-4xl font-extrabold mb-6">Venha conhecer nossa loja física</h2>
+                <p class="text-gray-400 mb-8 text-lg">Visite nosso showroom e confira a qualidade dos nossos produtos pessoalmente. Atendimento exclusivo para atacadistas e varejo.</p>
+                
+                <div class="flex flex-col gap-6">
+                    <div class="flex items-start gap-4">
+                        <div class="w-12 h-12 bg-gray-800 rounded-full flex items-center justify-center shrink-0">
+                            <i class="fa-solid fa-location-dot text-yellow-brand text-xl"></i>
+                        </div>
+                        <div>
+                            <h4 class="font-bold text-lg mb-1 text-white">Endereço</h4>
+                            <p class="text-gray-400 text-sm leading-relaxed">R. 11 de Janeiro, Quadra 94 - Lote 19/21<br>Vila Aurora Oeste, Goiânia - GO<br>CEP: 74425-100</p>
+                        </div>
+                    </div>
+
+                    <div class="flex items-start gap-4">
+                        <div class="w-12 h-12 bg-gray-800 rounded-full flex items-center justify-center shrink-0">
+                            <i class="fa-regular fa-clock text-yellow-brand text-xl"></i>
+                        </div>
+                        <div>
+                            <h4 class="font-bold text-lg mb-1 text-white">Horário de Funcionamento</h4>
+                            <p class="text-gray-400 text-sm leading-relaxed">
+                                Segunda a Sexta: 08:00 – 18:00<br>
+                                Sábado: 08:00 – 13:00<br>
+                                Domingo: 08:00 – 13:30
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="mt-8">
+                    <a href="https://maps.app.goo.gl/E37ZhpSnrgfykh99A" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 bg-yellow-brand hover:bg-yellow-hover text-black font-bold px-6 py-3 rounded-lg transition-colors">
+                        <i class="fa-solid fa-map-location-dot"></i> Ver no Mapa
+                    </a>
+                </div>
+            </div>
+            <div class="md:w-1/2 w-full">
+                <div class="aspect-video bg-gray-800 rounded-2xl overflow-hidden relative border border-gray-700 shadow-2xl">
+                    <img src="https://images.unsplash.com/photo-1556656793-08538906a9f8?w=800&q=80" alt="Fachada da loja" class="w-full h-full object-cover opacity-60">
+                    <div class="absolute inset-0 flex items-center justify-center pointer-events-none">
+                        <div class="bg-black/50 backdrop-blur-sm p-4 rounded-full text-white">
+                            <i class="fa-solid fa-store text-4xl"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-white border-t border-gray-200 pt-12 pb-6">
+        <div class="max-w-7xl mx-auto px-4 text-center md:text-left grid grid-cols-1 md:grid-cols-3 gap-8 mb-8">
+            <div>
+                <div class="flex items-center justify-center md:justify-start gap-2 mb-4">
+                    <i class="fa-solid fa-microchip text-2xl text-yellow-brand"></i>
+                    <h2 class="text-xl font-extrabold text-black">Praticamente Tudo</h2>
+                </div>
+                <p class="text-sm text-gray-500 mb-4 max-w-xs mx-auto md:mx-0">O seu parceiro ideal em tecnologia e acessórios. Atacado e Varejo com os melhores preços.</p>
+            </div>
+            <div>
+                <h4 class="font-bold text-gray-900 mb-4 uppercase text-sm">Links Rápidos</h4>
+                <ul class="space-y-2 text-sm text-gray-500">
+                    <li><a href="#" class="hover:text-yellow-brand transition-colors">Início</a></li>
+                    <li><a href="#" class="hover:text-yellow-brand transition-colors">Produtos</a></li>
+                    <li><a href="https://wa.me/5562996926096" target="_blank" class="hover:text-yellow-brand transition-colors">Falar com Vendedor</a></li>
+                </ul>
+            </div>
+            <div>
+                <h4 class="font-bold text-gray-900 mb-4 uppercase text-sm">Aviso Importante</h4>
+                <div class="bg-gray-50 border border-gray-200 p-4 rounded-lg text-sm text-gray-600 flex gap-3 text-left">
+                    <i class="fa-solid fa-circle-info text-yellow-brand text-lg mt-0.5 shrink-0"></i>
+                    <p>Apenas mostruário online. Todas as vendas, orçamentos e dúvidas são tratadas exclusivamente via atendimento no WhatsApp ou presencialmente em nossa loja.</p>
+                </div>
+            </div>
+        </div>
+        <div class="max-w-7xl mx-auto px-4 border-t border-gray-200 pt-6 text-center">
+            <p class="text-xs text-gray-400">&copy; 2026 Praticamente Tudo - Distribuidor de Eletrônicos. Todos os direitos reservados.</p>
+        </div>
+    </footer>
+
+    <!-- Floating Action Button (FAB) WhatsApp -->
+    <a href="https://wa.me/5562996926096?text=Olá,%20estou%20no%20site%20e%20gostaria%20de%20atendimento" 
+       target="_blank" 
+       rel="noopener noreferrer" 
+       class="fixed bottom-6 right-6 bg-whatsapp hover:bg-whatsapp-hover text-white w-14 h-14 rounded-full flex items-center justify-center shadow-2xl hover:scale-110 transition-transform z-50 group">
+        <i class="fa-brands fa-whatsapp text-3xl"></i>
+        <!-- Tooltip -->
+        <span class="absolute right-full mr-4 bg-white text-gray-800 text-xs font-bold px-3 py-2 rounded-lg shadow-lg opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap pointer-events-none">
+            Fale conosco!
+        </span>
+    </a>
+
+</body>
+</html>

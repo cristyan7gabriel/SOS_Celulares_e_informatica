@@ -1,0 +1,12 @@
+{
+  "name": "eletro-teste",
+  "version": "1.0.0",
+  "description": "Landing page de loja de eletrônicos",
+  "main": "index.html",
+  "scripts": {
+    "dev": "npx vite"
+  },
+  "devDependencies": {
+    "vite": "^5.2.0"
+  }
+}
