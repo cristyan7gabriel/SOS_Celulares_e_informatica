@@ -1,412 +1,133 @@
 <!DOCTYPE html>
-<html lang="pt-BR" class="scroll-smooth">
+<html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>TSI Informática | Hardware e Assistência em Goiânia</title>
-    <meta name="description" content="O setup que você respeita. Peças, acessórios e assistência técnica para o seu PC não te deixar na mão em Goiânia.">
-    <script src="https://cdn.tailwindcss.com"></script>
+    <title>SOS Celulares e Informática | O Maior Catálogo de Goiânia</title>
+    <meta name="description" content="Tudo para o seu Celular e PC em um só lugar. Assistência técnica especializada e o maior estoque de acessórios de Goiânia.">
+    
+    <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Outfit:wght@500;700;800;900&display=swap" rel="stylesheet">
+    
+    <!-- FontAwesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     
-    <script>
-        tailwind.config = {
-            theme: {
-                extend: {
-                    colors: {
-                        dark: '#1A1C20',
-                        darker: '#131518',
-                        surface: '#222428',
-                        surfaceHover: '#2A2C31',
-                        brand: {
-                            yellow: '#FFB800',
-                            orange: '#FF8800',
-                            accent1: '#FF6600',
-                            accent2: '#E6007E'
-                        }
-                    },
-                    fontFamily: {
-                        sans: ['Inter', 'sans-serif'],
-                        heading: ['Outfit', 'sans-serif'],
-                    },
-                    backgroundImage: {
-                        'gradient-brand': 'linear-gradient(135deg, #FF6600 0%, #E6007E 100%)',
-                        'gradient-text': 'linear-gradient(to right, #FFB800, #FF8800)',
-                        'bento-glow': 'radial-gradient(circle at top right, rgba(255, 102, 0, 0.15), transparent 50%)',
-                    }
-                }
-            }
-        }
-    </script>
-    <style>
-        body {
-            background-color: #1A1C20;
-            color: #F3F4F6;
-            overflow-x: hidden;
-        }
-
-        /* Subtle textured background */
-        .bg-texture {
-            background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.02'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
-        }
-
-        .text-gradient {
-            background: linear-gradient(to right, #FFB800, #FF8800);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-        }
-
-        /* Bento Grid Specific */
-        .bento-card {
-            background: #222428;
-            border: 1px solid rgba(255, 255, 255, 0.05);
-            border-radius: 24px;
-            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-            position: relative;
-            overflow: hidden;
-            display: flex;
-            flex-direction: column;
-        }
-
-        .bento-card::before {
-            content: '';
-            position: absolute;
-            inset: 0;
-            border-radius: 24px;
-            padding: 2px;
-            background: linear-gradient(135deg, #FF6600, #E6007E);
-            -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
-            -webkit-mask-composite: xor;
-            mask-composite: exclude;
-            opacity: 0;
-            transition: opacity 0.4s ease;
-        }
-
-        .bento-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 20px 40px -10px rgba(0,0,0,0.5), 0 0 20px rgba(255, 102, 0, 0.2);
-            background: #2A2C31;
-        }
-
-        .bento-card:hover::before {
-            opacity: 1;
-        }
-
-        .btn-brand {
-            background: linear-gradient(135deg, #FFB800, #FF8800);
-            color: #131518;
-            transition: all 0.3s ease;
-            position: relative;
-            overflow: hidden;
-            z-index: 1;
-        }
-        
-        .btn-brand::before {
-            content: '';
-            position: absolute;
-            top: 0; left: 0; right: 0; bottom: 0;
-            background: linear-gradient(135deg, #FF6600, #E6007E);
-            z-index: -1;
-            transition: opacity 0.3s ease;
-            opacity: 0;
-        }
-
-        .btn-brand:hover::before {
-            opacity: 1;
-        }
-        
-        .btn-brand:hover {
-            color: white;
-            box-shadow: 0 10px 20px -5px rgba(230, 0, 126, 0.4);
-        }
-
-        .btn-outline {
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            background: rgba(255, 255, 255, 0.03);
-            backdrop-filter: blur(10px);
-            transition: all 0.3s ease;
-        }
-
-        .btn-outline:hover {
-            background: rgba(255, 255, 255, 0.1);
-            border-color: rgba(255, 255, 255, 0.2);
-        }
-
-        /* FAB Animation */
-        @keyframes float {
-            0% { transform: translateY(0px); }
-            50% { transform: translateY(-10px); }
-            100% { transform: translateY(0px); }
-        }
-        
-        .fab-wpp {
-            animation: float 4s ease-in-out infinite;
-            background: #25D366;
-            box-shadow: 0 10px 25px rgba(37, 211, 102, 0.4);
-            transition: all 0.3s ease;
-        }
-        
-        .fab-wpp:hover {
-            transform: scale(1.1) translateY(-5px);
-            background: #128C7E;
-            box-shadow: 0 15px 30px rgba(37, 211, 102, 0.6);
-            animation-play-state: paused;
-        }
-
-        /* Nav Blur */
-        .nav-blur {
-            background: rgba(26, 28, 32, 0.85);
-            backdrop-filter: blur(12px);
-            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
-        }
-    </style>
+    <!-- Styles -->
+    <link rel="stylesheet" href="style.css">
 </head>
-<body class="bg-texture font-sans antialiased text-gray-300">
-
+<body>
     <!-- Header -->
-    <header class="fixed w-full top-0 z-50 nav-blur transition-all duration-300" id="navbar">
-        <div class="max-w-7xl mx-auto px-6 lg:px-8">
-            <div class="flex items-center justify-between h-20">
-                <!-- Logo -->
-                <a href="#" class="flex-shrink-0 flex items-center gap-2 group">
-                    <div class="relative flex items-center justify-center w-[140px] h-[40px] bg-darker rounded border border-white/5 overflow-hidden">
-                        <!-- ESPAÇO PARA A LOGO REAL DA TSI -->
-                        <!-- O lojista deve substituir a src abaixo pela logo original -->
-                        <img id="logo-real-tsi" src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 140 40'%3E%3Crect width='140' height='40' fill='%23131518'/%3E%3Ctext x='50%25' y='55%25' font-family='Arial, sans-serif' font-size='16' font-style='italic' font-weight='bold' fill='%23fff' text-anchor='middle' dominant-baseline='middle'%3ETSI %3C/text%3E%3Ctext x='75%25' y='55%25' font-family='Arial, sans-serif' font-size='10' font-style='italic' fill='%23fff' text-anchor='middle' dominant-baseline='middle'%3E INFORMÁTICA%3C/text%3E%3Cpath d='M10 30 L20 10 L30 30' stroke='url(%23g)' stroke-width='3' fill='none'/%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0%25' y1='0%25' x2='100%25' y2='100%25'%3E%3Cstop offset='0%25' stop-color='%23FF6600'/%3E%3Cstop offset='100%25' stop-color='%23E6007E'/%3E%3C/linearGradient%3E%3C/defs%3E%3C/svg%3E" alt="TSI Informática" class="h-full w-auto object-contain transition-transform duration-300 group-hover:scale-105">
-                    </div>
+    <header class="main-header">
+        <div class="container header-container">
+            <div class="logo">
+                <!-- Fallback to text if logo image is not available -->
+                <h1><i class="fa-solid fa-mobile-screen-button"></i> SOS Celulares <span class="logo-subtitle">& Informática</span></h1>
+            </div>
+            
+            <div class="search-bar">
+                <i class="fa-solid fa-search search-icon"></i>
+                <input type="text" id="searchInput" placeholder="Buscar produtos, marcas, acessórios...">
+            </div>
+
+            <div class="header-contact">
+                <a href="tel:6232123802" class="phone-link">
+                    <i class="fa-solid fa-phone"></i> (62) 3212-3802
                 </a>
-
-                <!-- Desktop Navigation -->
-                <nav class="hidden md:flex items-center gap-8">
-                    <a href="#equipamentos" class="text-sm font-medium text-gray-300 hover:text-white transition-colors">Equipamentos</a>
-                    <a href="#servicos" class="text-sm font-medium text-gray-300 hover:text-white transition-colors">Serviços</a>
-                    <a href="#loja" class="text-sm font-medium text-gray-300 hover:text-white transition-colors">Localização</a>
-                </nav>
-
-                <!-- Actions -->
-                <div class="flex items-center gap-4">
-                    <a href="https://www.instagram.com/tsiinformaticaa/" target="_blank" rel="noopener noreferrer" class="hidden sm:flex items-center justify-center w-10 h-10 rounded-full btn-outline text-gray-300 hover:text-white group">
-                        <i class="fa-brands fa-instagram text-lg group-hover:scale-110 transition-transform"></i>
-                    </a>
-                    <a href="https://wa.me/[INSERIR_WHATSAPP]?text=Olá,%20vim%20pelo%20site%20da%20TSI%20e%20gostaria%20de%20falar%20com%20um%20consultor." target="_blank" rel="noopener noreferrer" class="btn-brand px-6 py-2.5 rounded-full font-semibold text-sm flex items-center gap-2">
-                        <i class="fa-brands fa-whatsapp text-lg"></i>
-                        <span class="hidden sm:inline">Falar com Consultor</span>
-                        <span class="sm:hidden">Contato</span>
-                    </a>
-                </div>
             </div>
         </div>
     </header>
 
     <!-- Hero Section -->
-    <section class="relative pt-32 pb-20 lg:pt-48 lg:pb-32 overflow-hidden">
-        <!-- Glow effect -->
-        <div class="absolute top-0 left-1/2 -translate-x-1/2 w-full max-w-4xl h-[400px] bg-brand-orange opacity-10 blur-[120px] rounded-full pointer-events-none"></div>
-        
-        <div class="max-w-7xl mx-auto px-6 lg:px-8 relative z-10">
-            <div class="max-w-3xl">
-                <div class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full btn-outline mb-6">
-                    <span class="w-2 h-2 rounded-full bg-brand-yellow animate-pulse"></span>
-                    <span class="text-xs font-medium uppercase tracking-wider text-gray-300">A sua loja de informática em Goiânia</span>
-                </div>
-                
-                <h1 class="font-heading text-5xl sm:text-6xl lg:text-7xl font-bold leading-[1.1] text-white mb-6">
-                    Hardware, Acessórios e <br/>
-                    <span class="text-gradient">Assistência Especializada.</span>
-                </h1>
-                
-                <p class="text-lg sm:text-xl text-gray-400 mb-10 max-w-2xl leading-relaxed">
-                    O setup que você respeita. Peças, acessórios e assistência técnica para o seu PC não te deixar na mão. Tudo o que o seu PC precisa em Goiânia. Faça um orçamento sem compromisso.
-                </p>
-                
-                <div class="flex flex-col sm:flex-row gap-4">
-                    <a href="https://wa.me/[INSERIR_WHATSAPP]?text=Olá,%20vim%20pelo%20site.%20Quero%20fazer%20um%20orçamento." target="_blank" rel="noopener noreferrer" class="btn-brand px-8 py-4 rounded-full font-semibold text-base flex items-center justify-center gap-3">
-                        <i class="fa-brands fa-whatsapp text-xl"></i>
-                        Chamar no WhatsApp
-                    </a>
-                    <a href="#equipamentos" class="btn-outline px-8 py-4 rounded-full font-medium text-white flex items-center justify-center gap-2 hover:bg-white/5">
-                        Ver Catálogo
-                        <i class="fa-solid fa-arrow-down text-sm"></i>
-                    </a>
-                </div>
-            </div>
+    <section class="hero-section">
+        <div class="hero-content container">
+            <span class="hero-badge"><i class="fa-solid fa-bolt"></i> Referência em Goiânia</span>
+            <h2 class="hero-title">Tudo para o seu Celular e PC em um só lugar.</h2>
+            <p class="hero-subtitle">Assistência técnica especializada e o maior estoque de acessórios.</p>
         </div>
     </section>
 
-    <!-- Bento Grid Section (Products & Services) -->
-    <section id="equipamentos" class="py-24 relative">
-        <div class="max-w-7xl mx-auto px-6 lg:px-8">
-            <div class="mb-16">
-                <h2 class="font-heading text-3xl md:text-4xl font-bold text-white mb-4">O que a gente resolve pra você</h2>
-                <p class="text-gray-400 text-lg">Soluções direto ao ponto para quem joga ou trabalha pesado.</p>
+    <!-- Store Info (Quick Bar) -->
+    <div class="info-bar">
+        <div class="container info-container">
+            <div class="info-item">
+                <i class="fa-solid fa-truck-fast"></i> Entrega Rápida
             </div>
-
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-8">
-                
-                <!-- Card 1: Large (Span 2 columns on desktop) -->
-                <div class="bento-card md:col-span-2 p-8 lg:p-10 group bg-[url('https://images.unsplash.com/photo-1587202372634-32705e3bf49c?auto=format&fit=crop&q=80')] bg-cover bg-center bg-no-repeat bg-blend-overlay" style="background-color: rgba(34, 36, 40, 0.9);">
-                    <div class="relative z-10 h-full flex flex-col justify-between min-h-[300px]">
-                        <div>
-                            <div class="w-12 h-12 rounded-xl bg-gradient-brand flex items-center justify-center mb-6 shadow-lg">
-                                <i class="fa-solid fa-desktop text-white text-xl"></i>
-                            </div>
-                            <h3 class="font-heading text-3xl font-bold text-white mb-3">Monte seu PC Gamer ou de Trabalho</h3>
-                            <p class="text-gray-300 max-w-md text-lg leading-relaxed">
-                                Cansado de travamentos? Montamos a máquina ideal para o seu bolso e sua necessidade, com as melhores peças do mercado.
-                            </p>
-                        </div>
-                        <div class="mt-8">
-                            <a href="https://wa.me/[INSERIR_WHATSAPP]?text=Olá,%20vi%20o%20site%20da%20TSI%20e%20queria%20saber%20mais%20sobre%20Monte%20seu%20PC%20Gamer%20ou%20de%20Trabalho." target="_blank" class="inline-flex items-center gap-2 text-brand-yellow font-medium group-hover:text-white transition-colors">
-                                Quero montar meu PC <i class="fa-solid fa-arrow-right text-sm transition-transform group-hover:translate-x-1"></i>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Card 2: Medium -->
-                <div class="bento-card p-8 group">
-                    <div class="h-full flex flex-col">
-                        <div class="w-12 h-12 rounded-xl bg-surfaceHover border border-white/10 flex items-center justify-center mb-6">
-                            <i class="fa-solid fa-headset text-brand-orange text-xl"></i>
-                        </div>
-                        <h3 id="servicos" class="font-heading text-2xl font-bold text-white mb-3">Acessórios e Periféricos</h3>
-                        <p class="text-gray-400 mb-8 flex-grow">
-                            Teclados mecânicos, mouses de precisão, headsets e cadeiras. O upgrade que o seu setup merece.
-                        </p>
-                        <a href="https://wa.me/[INSERIR_WHATSAPP]?text=Olá,%20vi%20o%20site%20da%20TSI%20e%20queria%20saber%20mais%20sobre%20Acessórios%20e%20Periféricos." target="_blank" class="inline-flex items-center justify-center gap-2 w-full py-3 rounded-lg btn-outline text-white font-medium hover:bg-brand-orange hover:border-brand-orange hover:text-darker group-hover:border-brand-orange/50">
-                            <i class="fa-brands fa-whatsapp"></i> Consultar Estoque
-                        </a>
-                    </div>
-                </div>
-
-                <!-- Card 3: Medium -->
-                <div class="bento-card p-8 group md:col-span-1">
-                    <div class="h-full flex flex-col">
-                        <div class="w-12 h-12 rounded-xl bg-surfaceHover border border-white/10 flex items-center justify-center mb-6">
-                            <i class="fa-solid fa-screwdriver-wrench text-brand-orange text-xl"></i>
-                        </div>
-                        <h3 class="font-heading text-2xl font-bold text-white mb-3">Assistência Técnica Especializada</h3>
-                        <p class="text-gray-400 mb-8 flex-grow">
-                            Manutenção preventiva, formatação, limpeza física e troca de pasta térmica. Traz que a gente resolve.
-                        </p>
-                        <a href="https://wa.me/[INSERIR_WHATSAPP]?text=Olá,%20vi%20o%20site%20da%20TSI%20e%20queria%20saber%20mais%20sobre%20Assistência%20Técnica%20Especializada." target="_blank" class="inline-flex items-center justify-center gap-2 w-full py-3 rounded-lg btn-outline text-white font-medium hover:bg-brand-orange hover:border-brand-orange hover:text-darker group-hover:border-brand-orange/50">
-                            <i class="fa-brands fa-whatsapp"></i> Agendar Reparo
-                        </a>
-                    </div>
-                </div>
-
-                <!-- Card 4: Horizontal (Span 2 columns on desktop) -->
-                <div class="bento-card md:col-span-2 p-8 group bg-bento-glow">
-                    <div class="flex flex-col md:flex-row md:items-center gap-8 h-full">
-                        <div class="flex-grow">
-                            <h3 class="font-heading text-2xl font-bold text-white mb-3">Upgrades e Peças Avulsas</h3>
-                            <p class="text-gray-400 max-w-lg mb-6">
-                                Placas de vídeo, processadores, SSDs NVMe e memórias RAM. Trabalhamos com as melhores marcas para turbinar sua máquina.
-                            </p>
-                            <div class="flex gap-4">
-                                <span class="px-3 py-1 bg-white/5 rounded text-xs font-medium text-gray-300">Intel</span>
-                                <span class="px-3 py-1 bg-white/5 rounded text-xs font-medium text-gray-300">AMD</span>
-                                <span class="px-3 py-1 bg-white/5 rounded text-xs font-medium text-gray-300">NVIDIA</span>
-                                <span class="px-3 py-1 bg-white/5 rounded text-xs font-medium text-gray-300">Corsair</span>
-                            </div>
-                        </div>
-                        <div class="flex-shrink-0">
-                            <a href="https://wa.me/[INSERIR_WHATSAPP]?text=Olá,%20vi%20o%20site%20da%20TSI%20e%20estou%20buscando%20peças%20para%20upgrade." target="_blank" class="w-14 h-14 rounded-full bg-gradient-brand flex items-center justify-center hover:scale-110 transition-transform shadow-lg shadow-brand-accent2/30">
-                                <i class="fa-solid fa-arrow-right text-white text-xl"></i>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-
+            <div class="info-item">
+                <i class="fa-solid fa-shield-check"></i> Garantia de Qualidade
+            </div>
+            <div class="info-item">
+                <i class="fa-solid fa-credit-card"></i> Pagamento Facilitado
+            </div>
+            <div class="info-item">
+                <i class="fa-solid fa-store"></i> Loja Física no Centro
             </div>
         </div>
-    </section>
+    </div>
 
-    <!-- Nossa Loja Section -->
-    <section id="loja" class="py-24 border-t border-white/5 bg-darker">
-        <div class="max-w-7xl mx-auto px-6 lg:px-8">
-            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-                
-                <div>
-                    <div class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full btn-outline mb-6">
-                        <i class="fa-solid fa-location-dot text-brand-orange text-xs"></i>
-                        <span class="text-xs font-medium uppercase tracking-wider text-gray-300">Loja Física em Goiânia</span>
-                    </div>
-                    
-                    <h2 class="font-heading text-4xl font-bold text-white mb-6">Muito além do digital, venha tomar um café com a gente.</h2>
-                    <p class="text-gray-400 text-lg mb-8 leading-relaxed">
-                        A TSI Informática é uma loja real, com portas abertas para te receber. Traz seu equipamento, troca uma ideia com nossos técnicos e veja as peças de perto antes de fechar negócio. Transparência total e zero enrolação.
-                    </p>
-
-                    <div class="flex flex-col sm:flex-row gap-4">
-                        <a href="https://maps.app.goo.gl/BJPXvxxVE1tWVxQH9" target="_blank" rel="noopener noreferrer" class="btn-brand px-6 py-3.5 rounded-xl font-semibold flex items-center justify-center gap-3">
-                            <i class="fa-solid fa-map-location-dot text-lg"></i>
-                            Traçar Rota no Maps
-                        </a>
-                    </div>
-                </div>
-
-                <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
-                    <!-- Location Info Card -->
-                    <div class="bento-card p-6 bg-surface">
-                        <div class="w-10 h-10 rounded-lg bg-white/5 flex items-center justify-center mb-4">
-                            <i class="fa-solid fa-clock text-gray-400"></i>
-                        </div>
-                        <h4 class="font-bold text-white mb-2">Horário de Funcionamento</h4>
-                        <p class="text-sm text-gray-400 mb-1">Seg a Sex: 08:00 - 18:00</p>
-                        <p class="text-sm text-gray-400">Sábado: 08:00 - 12:00</p>
-                    </div>
-
-                    <!-- Instagram Card -->
-                    <a href="https://www.instagram.com/tsiinformaticaa/" target="_blank" rel="noopener noreferrer" class="bento-card p-6 bg-gradient-to-br from-[#833AB4] via-[#FD1D1D] to-[#FCAF45] group">
-                        <div class="absolute inset-0 bg-darker/90 group-hover:bg-darker/80 transition-colors"></div>
-                        <div class="relative z-10 flex flex-col h-full">
-                            <div class="w-10 h-10 rounded-lg bg-white/10 flex items-center justify-center mb-4 backdrop-blur-sm">
-                                <i class="fa-brands fa-instagram text-white"></i>
-                            </div>
-                            <h4 class="font-bold text-white mb-2">Siga no Instagram</h4>
-                            <p class="text-sm text-gray-300 mb-4 flex-grow">Acompanhe nossas montagens de PCs e bastidores do dia a dia na loja.</p>
-                            <span class="text-xs font-medium text-white/80 flex items-center gap-1 group-hover:text-white transition-colors">
-                                @tsiinformaticaa <i class="fa-solid fa-chevron-right text-[10px]"></i>
-                            </span>
-                        </div>
-                    </a>
-                </div>
-
+    <!-- Main Catalog Section -->
+    <main class="catalog-section container" id="catalogo">
+        <div class="section-header">
+            <h3 class="section-title">Nosso Catálogo</h3>
+            
+            <!-- Filters -->
+            <div class="filters-container" id="filters">
+                <button class="filter-btn active" data-filter="all">Todos</button>
+                <button class="filter-btn" data-filter="smartphones">Smartphones</button>
+                <button class="filter-btn" data-filter="capinhas">Capinhas e Películas</button>
+                <button class="filter-btn" data-filter="fones">Fones de Ouvido</button>
+                <button class="filter-btn" data-filter="cabos">Cabos e Carregadores</button>
+                <button class="filter-btn" data-filter="informatica">Informática</button>
             </div>
         </div>
-    </section>
 
-    <!-- Footer -->
-    <footer class="py-12 border-t border-white/5 text-center text-gray-500 text-sm">
-        <div class="max-w-7xl mx-auto px-6">
-            <p>&copy; <span id="year"></span> TSI Informática. Todos os direitos reservados.</p>
-            <p class="mt-2 text-gray-600">Site focado em atendimento direto via WhatsApp.</p>
+        <!-- Dynamic Product Grid -->
+        <div class="product-grid" id="productGrid">
+            <!-- Rendered via JavaScript -->
+        </div>
+
+        <!-- Empty State (Search not found) -->
+        <div id="emptyState" class="empty-state hidden">
+            <i class="fa-solid fa-box-open empty-icon"></i>
+            <p>Nenhum produto encontrado para sua busca.</p>
+            <button id="clearSearchBtn" class="btn-primary mt-4">Limpar Busca</button>
+        </div>
+    </main>
+
+    <!-- Location & Footer -->
+    <footer class="main-footer">
+        <div class="container footer-container">
+            <div class="footer-info">
+                <h4>SOS Celulares e Informática</h4>
+                <p>O seu megacentro de tecnologia em Goiânia.</p>
+                <div class="footer-contact-list">
+                    <p><i class="fa-solid fa-phone"></i> Fixo: (62) 3212-3802</p>
+                    <p><i class="fa-brands fa-whatsapp"></i> WhatsApp Vendas: Atendimento Rápido</p>
+                    <p><i class="fa-solid fa-globe"></i> www.soscelulares.com.br</p>
+                </div>
+            </div>
+            
+            <div class="footer-location">
+                <h4>Loja Física no Centro</h4>
+                <p><i class="fa-solid fa-location-dot"></i> Faça-nos uma visita e conheça nosso estoque completo.</p>
+                <a href="https://maps.app.goo.gl/Vfe7tSTvwJXGmRo89" target="_blank" class="btn-location">
+                    <i class="fa-solid fa-map-location-dot"></i> Ver no Google Maps
+                </a>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; <span id="currentYear"></span> SOS Celulares e Informática. Todos os direitos reservados.</p>
         </div>
     </footer>
 
     <!-- FAB WhatsApp -->
-    <a href="https://wa.me/[INSERIR_WHATSAPP]?text=Olá,%20estou%20no%20site%20da%20TSI%20e%20preciso%20de%20ajuda." target="_blank" rel="noopener noreferrer" class="fixed bottom-6 right-6 z-50 w-16 h-16 rounded-full flex items-center justify-center text-white text-3xl fab-wpp" aria-label="Contato pelo WhatsApp">
+    <a href="#" id="fabWhatsapp" class="fab-whatsapp" target="_blank" title="Fale conosco no WhatsApp">
         <i class="fa-brands fa-whatsapp"></i>
+        <span class="fab-text">Comprar Agora</span>
     </a>
 
-    <script>
-        // Set current year
-        document.getElementById('year').textContent = new Date().getFullYear();
-
-        // Navbar blur on scroll
-        window.addEventListener('scroll', () => {
-            const nav = document.getElementById('navbar');
-            if (window.scrollY > 50) {
-                nav.classList.add('shadow-lg', 'shadow-black/20');
-                nav.style.borderBottomColor = 'rgba(255,255,255,0.1)';
-            } else {
-                nav.classList.remove('shadow-lg', 'shadow-black/20');
-                nav.style.borderBottomColor = 'rgba(255,255,255,0.05)';
-            }
-        });
-    </script>
+    <!-- Scripts -->
+    <script src="script.js"></script>
 </body>
 </html>
