@@ -105,6 +105,9 @@ function renderProducts(items) {
         let promoBadge = product.isPromo ? `<span class="product-badge">OFERTA</span>` : '';
         let oldPriceHtml = product.oldPrice ? `<span class="product-price-old">${formatCurrency(product.oldPrice)}</span>` : '';
 
+        // Category based image mapping
+        const categoryImage = `/placeholder-${product.category}.png`;
+
         // Generate 5 stars for visual rating
         const stars = `
             <div class="product-rating">
@@ -119,7 +122,7 @@ function renderProducts(items) {
         card.innerHTML = `
             ${promoBadge}
             <div class="product-image-container">
-                <img src="${product.img}" alt="${product.name}" class="product-image" loading="lazy">
+                <img src="${categoryImage}" alt="${product.name}" class="product-image" loading="lazy">
             </div>
             <div class="product-info">
                 <span class="product-category">${getCategoryName(product.category)}</span>
